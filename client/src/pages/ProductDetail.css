@@ -1,0 +1,53 @@
+.product-detail {
+  max-width: 800px;
+  margin: 2rem auto;
+  display: flex;
+  gap: 2rem;
+  font-family: sans-serif;
+}
+
+.product-detail img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.details {
+  flex: 1;
+}
+
+.description {
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.bubble {
+  margin-top: 10px;
+  background: #4caf50;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.reviews {
+  margin-top: 2rem;
+}
+
+.review {
+  border-top: 1px solid #ccc;
+  padding: 0.5rem 0;
+}
+
+.review-form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-form textarea {
+  min-height: 80px;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}

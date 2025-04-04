@@ -1,0 +1,33 @@
+.form-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.form-container h2 {
+  text-align: center;
+}
+
+.form-container input,
+.form-container button {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.6rem;
+  font-size: 1rem;
+}
+
+.form-container input[type="file"] {
+  padding: 0.3rem;
+}
+
+.form-container .link {
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
