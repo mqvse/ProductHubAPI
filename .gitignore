@@ -1,15 +1,2 @@
-# Node
 node_modules/
 .env
-npm-debug.log
-
-# VSCode or editor config
-.vscode/
-.DS_Store
-
-# Build
-dist/
-build/
-
-# React build
-client/build/

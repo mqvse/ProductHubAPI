@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://memphislaptop-sierracorrect-3001.codio-box.uk',
+  baseURL: 'https://memphislaptop-sierracorrect-3001.codio-box.uk/api',
 });
 
 api.interceptors.request.use((config) => {
