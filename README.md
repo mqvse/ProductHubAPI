@@ -1,15 +1,12 @@
-# Ecom API & SPA Project
+# Product Hub API & SPA
 
-This is a secure e-commerce platform project for the 6003CEM module at Coventry University.  
+This is a secure e-commerce platform project for Coventry University (6003CEM).
+
 It includes:
-
-- A **Koa RESTful API** with MySQL
-- A **React Single Page Application** (SPA) frontend
-- JWT authentication & role-based authorization
-- Full database-backed products, reviews, and cart functionality
-- Automated tests with Jest + Supertest
-
----
+- A **Koa REST API** with MySQL for products, reviews, and authentication
+- A **React SPA client** connecting via Axios
+- JWT authentication with roles
+- Jest + Supertest API endpoint tests
 
 ## 🚀 Running on Codio
 
