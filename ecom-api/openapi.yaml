@@ -1,0 +1,93 @@
+openapi: 3.0.3
+info:
+  title: Ecom API
+  description: RESTful API for managing products, reviews, and authentication
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+security:
+  - bearerAuth: []
+
+paths:
+  /api/auth/register:
+    post:
+      summary: Register user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email: { type: string, example: user@example.com }
+                password: { type: string, example: pass123 }
+                username: { type: string, example: johndoe }
+      responses:
+        '200':
+          description: User created
+  /api/products:
+    get:
+      summary: List all products
+      responses:
+        '200':
+          description: Products list
+    post:
+      summary: Create product
+      security: [ bearerAuth: [] ]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name: { type: string, example: "T-Shirt" }
+                category: { type: string, example: "Clothing" }
+                price: { type: number, example: 29.99 }
+      responses:
+        '201':
+          description: Product created
+  /api/products/{id}:
+    get:
+      summary: Get product by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          description: Single product
+  /api/reviews:
+    post:
+      summary: Post a review
+      security: [ bearerAuth: [] ]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                productId: { type: integer, example: 1 }
+                rating: { type: integer, example: 5 }
+                comment: { type: string, example: "Great!" }
+      responses:
+        '201':
+          description: Review created
+    get:
+      summary: Get reviews by product
+      parameters:
+        - name: productId
+          in: query
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          description: List of reviews
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
