@@ -8,6 +8,9 @@ It includes:
 - JWT authentication with roles
 - Jest + Supertest API endpoint tests
 
+<img width="1838" height="903" alt="image" src="https://github.com/user-attachments/assets/46e16234-5b74-40d7-bf90-95462c4e5fc4" />
+
+
 ## 🚀 Running on Codio
 
 ### ✅ Starting the API server
