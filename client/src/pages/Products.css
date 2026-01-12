@@ -210,3 +210,31 @@
   align-items: center;
   justify-content: center;
 }
+
+.nav-btn {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 12px 15px;
+  color: #a3aed0;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.nav-btn:hover {
+  background-color: #f4f7fe;
+  color: #4318ff;
+}
+
+.nav-btn.active {
+  background-color: white;
+  color: #4318ff;
+  font-weight: 700;
+  border-right: 4px solid #4318ff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
