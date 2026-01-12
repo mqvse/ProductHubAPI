@@ -1,94 +1,212 @@
-.products-page {
-    padding: 2rem;
-    background: #f0f2f5;
-    min-height: 100vh;
-  }
-  
-  .products-page h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #222;
-    margin-bottom: 2rem;
-  }
-  
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
-    padding: 0 2rem;
-  }
-  
-  .product-card {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    transition: all 0.2s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-  }
-  
-  .product-card img {
-    width: 100%;
-    aspect-ratio: 1 / 1; /* Ensures the image is square */
-    object-fit: cover;
-    border-radius: 6px;
-  }
-  
-  
-  .product-content {
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  .product-category {
-    display: inline-block;
-    font-size: 0.75rem;
-    color: #888;
-    background: #e4e4e4;
-    padding: 0.2rem 0.6rem;
-    border-radius: 12px;
-    margin-bottom: 0.5rem;
-  }
-  
-  .product-card h3 {
-    font-size: 1.2rem;
-    color: #222;
-    margin: 0.5rem 0;
-  }
-  
-  .product-card p {
-    font-size: 1rem;
-    color: #007b5e;
-    font-weight: bold;
-    margin: 0.5rem 0;
-  }
-  
-  .product-card span {
-    display: block;
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 1rem;
-  }
-  
-  .add-to-cart-btn {
-    background-color: #007b5e;
-    color: #fff;
-    border: none;
-    padding: 0.6rem 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.2s ease;
-  }
-  
-  .add-to-cart-btn:hover {
-    background-color: #005e48;
-  }
-  
+/* pages/Products.css */
+
+/* 1. Layout Structure */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f7fe; /* The light blue/grey from your image */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. Sidebar */
+.sidebar {
+  width: 250px;
+  background: white;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  display: none; /* Hidden on mobile, shown on desktop */
+}
+
+@media (min-width: 768px) {
+  .sidebar { display: flex; }
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2b3674;
+  margin-bottom: 20px;
+}
+
+.sidebar nav a {
+  text-decoration: none;
+  color: #a3aed0;
+  font-weight: 500;
+  padding: 10px;
+  display: block;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.sidebar nav a.active, .sidebar nav a:hover {
+  color: #4318ff; /* Brand Blue */
+  background-color: #f4f7fe;
+  font-weight: 700;
+  border-right: 3px solid #4318ff;
+}
+
+/* 3. Main Content */
+.main-content {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+/* 4. Top Header */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  background: white;
+  padding: 15px 25px;
+  border-radius: 30px; /* Pill shape header */
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.02);
+}
+
+.search-bar {
+  background: #f4f7fe;
+  padding: 10px 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 300px;
+}
+
+.search-bar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #11047a;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* 5. Hero Banner */
+.hero-banner {
+  background: linear-gradient(135deg, #868CFF 0%, #4318FF 100%);
+  color: white;
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.hero-banner h1 { margin: 0; font-size: 2.5rem; }
+.hero-banner button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  color: #4318FF;
+  font-weight: bold;
+  cursor: pointer;
+}
+.hero-banner img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: none;
+}
+@media (min-width: 768px) {
+  .hero-banner img { display: block; }
+}
+
+/* 6. Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+/* 7. The Cards (Glass Style) */
+.modern-card {
+  background: white;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0px 10px 20px rgba(112, 144, 176, 0.07);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.modern-card:hover {
+  transform: translateY(-5px);
+}
+
+.image-container {
+  height: 160px;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category {
+  font-size: 12px;
+  color: #a3aed0;
+  font-weight: 500;
+}
+
+.modern-card h3 {
+  font-size: 16px;
+  color: #2b3674;
+  margin: 5px 0;
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* Pushes to bottom */
+  padding-top: 10px;
+}
+
+.price {
+  font-weight: 700;
+  color: #4318ff;
+  font-size: 16px;
+}
+
+.add-btn {
+  background: #11047a;
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
