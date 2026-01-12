@@ -1,4 +1,3 @@
-// src/pages/Login.js
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import api from '../api';
@@ -22,15 +21,48 @@ function Login({ setToken }) {
     }
   };
 
+  // --- NEW: Guest Mode Function ---
+  const handleGuestLogin = () => {
+    const mockToken = 'guest-token-123';
+    setToken(mockToken);
+    localStorage.setItem('token', mockToken);
+    navigate('/products');
+  };
+
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
-        <h2>Login</h2>
-        <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required />
-        <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} required />
-        <button type="submit">Login</button>
+        <h2>Welcome Back</h2>
+        
+        <input 
+          type="email" 
+          placeholder="Email Address" 
+          value={email} 
+          onChange={e => setEmail(e.target.value)} 
+          required 
+        />
+        
+        <input 
+          type="password" 
+          placeholder="Password" 
+          value={password} 
+          onChange={e => setPassword(e.target.value)} 
+          required 
+        />
+        
+        <button type="submit">Sign In</button>
+        
+        {/* New Guest Button */}
+        <button 
+          type="button" 
+          onClick={handleGuestLogin} 
+          className="guest-btn"
+        >
+          View Demo (No Login Required)
+        </button>
       </form>
-      <p>No account? <Link to="/register">Register here</Link></p>
+      
+      <p>Don't have an account? <Link to="/register">Register here</Link></p>
     </div>
   );
 }

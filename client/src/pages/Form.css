@@ -1,33 +1,90 @@
+/* pages/Form.css */
+
 .form-container {
-  max-width: 400px;
-  margin: auto;
-  padding: 2rem;
-  background: #f9f9f9;
-  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f6f8; /* Soft grey background */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-.form-container h2 {
-  text-align: center;
-}
-
-.form-container input,
-.form-container button {
-  display: block;
+form {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   width: 100%;
-  margin: 0.5rem 0;
-  padding: 0.6rem;
-  font-size: 1rem;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.form-container input[type="file"] {
-  padding: 0.3rem;
-}
-
-.form-container .link {
-  display: block;
-  margin-top: 1rem;
+h2 {
   text-align: center;
-  color: blue;
-  text-decoration: underline;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #0070f3; /* Professional Blue */
+}
+
+/* Primary Button (Login) */
+button[type="submit"] {
+  background-color: #0070f3;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+  background-color: #0051a2;
+}
+
+/* Secondary Button (Guest) */
+.guest-btn {
+  background-color: #eec200; /* Friendly Yellow/Orange for "Demo" */
+  color: #333;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.guest-btn:hover {
+  background-color: #d4ac00;
+}
+
+.form-container p {
+  margin-top: 20px;
+  color: #666;
+  font-size: 14px;
+}
+
+.form-container a {
+  color: #0070f3;
+  text-decoration: none;
+  font-weight: 600;
 }
