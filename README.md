@@ -8,6 +8,15 @@ It includes:
 - JWT authentication with roles
 - Jest + Supertest API endpoint tests
 
+## Frontend Decisions & Trade-offs
+
+- Structured components to keep authentication state accessible to protected routes without prop drilling.
+- Prioritised clear loading and error states to reflect real-world API behaviour.
+- Chose a simple, consistent layout system to keep UI predictable and maintainable.
+- Focused on accessibility basics such as semantic HTML and keyboard navigation.
+
+Live View: https://product-hub-api.vercel.app/products
+
 <img width="1838" height="903" alt="image" src="https://github.com/user-attachments/assets/46e16234-5b74-40d7-bf90-95462c4e5fc4" />
 
 
